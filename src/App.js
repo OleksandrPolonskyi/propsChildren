@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import BootstrapTest from './BootstrapTest';
 
 import './App.css';
 
@@ -78,10 +79,35 @@ const Wrapper = styled.div`
     margin: 80px auto 0 auto;
 `;
 
+const DynamicCreating = (props) => {
+  return (
+    <div className={'mb-3 p-3 border border-' + props.color}>
+      {
+        React.Children.map(props.children, child => {
+          return React.cloneElement(child, { className: 'shadow p-3 m-3 border rounded' })
+        })
+      }
+    </div>
+  )
+}
 
 function App() {
   return (
     <Wrapper>
+      <BootstrapTest
+        left={
+          <DynamicCreating color={'primary'}>
+            <h2>Простий текст на укр на ліво</h2>
+            <h2>Простий текст на укр номер 2</h2>
+          </DynamicCreating>
+        }
+        right={
+          <DynamicCreating color={'primary'}>
+            <h2>Простий текст на укр на право</h2>
+            <h2>Простий текст на укр номер 3</h2>
+          </DynamicCreating>
+        }
+      />
       <WhoAmI name='John' surname="Smith" link="facebook.com" />
       <WhoAmI name='Alex' surname="Shepard" link="vk.com" />
     </Wrapper>
