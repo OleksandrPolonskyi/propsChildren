@@ -2,24 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import './index.css';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './App';
-import { Button } from './App';
+// import { Button } from './App';
 
-const BigButton = styled(Button)`
-    margin: 0 auto;
-    width: 200px;
-    text-align: center;
-    margin-bottom: 100px;
-`;
+// const BigButton = styled(Button)`
+//     margin: 0 auto;
+//     width: 200px;
+//     text-align: center;
+//     margin-bottom: 100px;
+// `;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
-    <BigButton as="a">Отправить отчет</BigButton>
+    {/* <BigButton as="a">Отправить отчет</BigButton> */}
   </React.StrictMode>
 );
 

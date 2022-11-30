@@ -2,7 +2,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const BootstrapTest = (props) => {
     return (
-        <Container className="mt-7 mb-7">
+        <Container>
             <Row>
                 <Col>
                     {props.left}
@@ -11,7 +11,7 @@ const BootstrapTest = (props) => {
                     {props.right}
                 </Col>
             </Row>
-        </Container>
+        </Container >
     )
 }
 
